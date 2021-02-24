@@ -53,14 +53,30 @@
     - `sudo yum -y install mariadb mariadb-server`
     - `curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash`
     - まで…
+- 2021/02/24
+  - htpd
+    - vhostの設定完了
+      - www
+      - hymns
+      - locations
+      - reader
+      - wiki
+    - php 8.4
+      - インストール完了
+      - [www](http://www.bible-hymnal-tools.faith)に`phpinfo();`のみの`index.php`を設置して動作確認済み
+      - `composer`インストール済み
+    - MariaDB
+      - 本体の設定は文字コードの変更含めて完了
+    - git
+      - インストール完了
 
 TODO:
 
 - MariaDB
-  - MariaDBのリポジトリから最新版にするところから
+  - phpMyAdminのインストールと設定
+    - vhost作成含む
 - httpd
-  - vhost設定
-  - `php`と`Node.js`と`Ruby on Rails`の検討
+  - `Node.js`と`Ruby on Rails`の検討
 - postfix
   - **インストールせいやぁ！**
 - dovecot
