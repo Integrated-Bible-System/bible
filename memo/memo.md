@@ -69,12 +69,15 @@
       - 本体の設定は文字コードの変更含めて完了
     - git
       - インストール完了
+- 2021/02/25
+  - phpMyAdmin
+    - インストールしたが、`php8`に未対応
+    - `yum`で`remi-80`を有効にして`yum upgrade`するも依存関係のエラー多発
 
 TODO:
 
 - MariaDB
-  - phpMyAdminのインストールと設定
-    - vhost作成含む
+  - phpMyAdminのアップデートエラーの解決
 - httpd
   - `Node.js`と`Ruby on Rails`の検討
 - postfix
