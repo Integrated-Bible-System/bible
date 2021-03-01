@@ -390,4 +390,6 @@ php74-php-zstd.x86_64 : Zstandard extension
 
 今日は`00-base.conf`で`LoadModule`の対象を修正した。
 
+なお本日の再設定の過程において**`*.php`**が`php`によるインタープリテーションが未設定の為に、処理されないまま。
+
 続きは明日！
