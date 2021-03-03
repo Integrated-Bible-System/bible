@@ -386,10 +386,44 @@ php74-php-zstd.x86_64 : Zstandard extension
 
 まだ`phpMyAdmin`までインストールしていない。
 
-また現時点では`php74-php-fm`をインストールしていないので、`httpd`の設定ファイルを修正するついでに`/etc/httpd/conf.modules.d`以下のファイルの整合性を確認し始めたところ。
+また現時点では`php74-php-fpm`をインストールしていないので、`httpd`の設定ファイルを修正するついでに`/etc/httpd/conf.modules.d`以下のファイルの整合性を確認し始めたところ。
 
 今日は`00-base.conf`で`LoadModule`の対象を修正した。
 
 なお本日の再設定の過程において**`*.php`**が`php`によるインタープリテーションが未設定の為に、処理されないまま。
 
 続きは明日！
+
+### 2021/03/03
+
+`/etc/httpd/conf.d/15-php.conf`と`/etc/httpd/conf.d/15-php74.conf`が混在していたので`/etc/httpd/conf.d/15-php.conf`をリネームして、`httpd`を再起動した結果、現在はWEBでphpを処理できている。
+
+```bash
+$ yum list installed --enablerepo=remi-php74 php*
+php74.x86_64
+php74-php.x86_64
+php74-php-bcmath.x86_64
+php74-php-cli.x86_64
+php74-php-common.x86_64
+php74-php-devel.x86_64
+php74-php-ffi.x86_64
+php74-php-gd.x86_64
+php74-php-intl.x86_64
+php74-php-json.x86_64
+php74-php-mbstring.x86_64
+php74-php-mysqlnd.x86_64
+php74-php-pdo.x86_64
+php74-php-pecl-mcrypt.x86_64
+php74-php-pecl-xdebug.x86_64
+php74-php-pecl-zip.x86_64
+php74-php-sodium.x86_64
+php74-php-xml.x86_64
+php74-runtime.x86_64
+```
+
+がインストール済み。
+
+#### お皿洗ってから、phhpMyAdminね。
+
+
+
