@@ -425,5 +425,21 @@ php74-runtime.x86_64
 
 #### お皿洗ってから、phhpMyAdminね。
 
+お皿洗い終わったらブレーカーの交換で停電とか…
 
+`epel`レポジトリも`remi-php74`も、`phpMyAdmin`の最新版を提供していなかった。
 
+- 本家の[ダウンロードページ](https://www.phpmyadmin.net/downloads/)で、最新版のhttpsのURLをコピー
+- `wget`して解凍する
+- `/usr/share/`に移動する
+- `chown -R apache:FTPGroup /usr/share/phpMyAdmin`
+- `chmod -R 775 /usr/share/phpMyAdmin`
+- `/usr/share/phpMyAdmin.config.inc.sample.php`を`/usr/share/phpMyAdmin.config.inc.php`にコピー
+  - 当然設定してねー。
+- `mysql -u root -p`
+  - `CREATE USER 'pma'@'localhost' IDENTIFIED BY 'パスワード';`
+  - `GRANT ALL ON *.* TO 'pma'@'localhost' IDENTIFIED BY 'パスワード';`
+  - `FLUSH PRIVILAGES;`
+- `systemctl restart httpd`
+
+ブラウザから接続して問題無い事を確認。
