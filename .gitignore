@@ -187,4 +187,9 @@ BibleReader/
 hymnal/
 Locations/
 HymnsData/
+dokuwiki/
+memo/
+ImagesForWiki/
+util/
+vue-by-vite/
 disclaimer.html
