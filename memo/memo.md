@@ -21,3 +21,20 @@
   - Users
     - root
     - admin _(wheel)_
+
+ ## Services required to install
+
+ - Postfix
+ - Dovecot
+ - cyrussasl
+
+ ### Mail accounts
+
+ - For enteire system
+ - For Hymnal Search
+    - Search System Admin
+        - Me?
+    - Search System Manager
+        - Jim?
+ - For Bible Location
+ - For Bible Reader
